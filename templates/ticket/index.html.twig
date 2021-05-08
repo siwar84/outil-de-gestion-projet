@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Ticket{% endblock %}
+
+{% block body %}
+    <section>
+        {{ form_start(form) }}
+        <h2>Create ticket</h2>
+        <form action="#">
+            <p><i>Complétez le formulaire. Les champs marqué par </i><em>*</em> sont <em>obligatoires</em></p>
+            <fieldset>
+                <p>
+                    Project* <br />
+                    <input type="text" name="Project" value="" />
+                </p>
+                <p>
+                    Ticket Type* <br />
+                    <select name=" type">
+                        <option value="Story" selected="selected">Story</option>
+                        <option value="Task" >Task</option>
+                        <option value="Bug">Bug</option>
+                        <option value="Epic">Epic</option>
+                    </select>
+                </p>
+                <p>
+                    Summary* <br />
+                    <input type="text" name="summary" value="" />
+                </p>
+                <p>
+                    Description<br />
+                    <textarea name="Description" rows="6" cols="40"></textarea>
+                </p>
+                <p>
+                    Assignee<br />
+                    <select name=assignee" type">
+                        <option value="Automatic" selected="selected">Automatic</option>
+                        <option value="Unassigned" >Unassigned</option>
+
+                    </select>
+
+                </p>
+                <p>
+                    <a herf="#">Assign to me</a>
+                </p>
+                <p>
+                    Labels<br />
+                    <input type="text" name="Labels" value="" />
+
+                </p>
+                <p>
+                    Reporter*<br />
+                    <input type="text" name="Reporter" value="" />
+
+                </p>
+                <p>
+                    <input type="checkbox" name="create" value="create"   /> Create another
+                    <input type="submit" value="Create"  />
+                    <input type="reset" value="Cancel"/>
+
+                </p>
+
+
+
+        {{ form_end(form) }}
+    </section>
+
+{% endblock %}

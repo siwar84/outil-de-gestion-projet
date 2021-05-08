@@ -47,6 +47,12 @@ class Ticket
      * @ORM\Column(type="integer")
      */
     private ?int $Taux_avancement;
+    public function __construct()
+    {
+        $this->DateDebut = new \DateTime();
+        $this->DateFin =new \DateTime();
+
+    }
 
     public function getId(): ?int
     {
