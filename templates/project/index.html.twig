@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}créer un projet{% endblock %}
+
+{% block body %}
+    <section>
+        {{ form_start(form) }}
+        <h2>Create Project</h2>
+        <form action="#">
+            <fieldset>
+                <p>
+                    Non* <br />
+                    <input type="text" name="Non" value="" />
+                </p>
+                <p>
+                    Clé <br />
+                    <input type="text" name="Clé" value="" />
+                </p>
+                <p>
+                    Modéle* <br />
+                    <select name=" type">
+                        <option value="Scrum" selected="selected">Srum</option>
+                        <option value="Kaban" >Kaban</option>
+
+                    </select>
+                </p>
+
+
+                <button type="sumbit">create</button>
+            </fieldset>
+        </form>
+
+
+
+        {{ form_end(form) }}
+
+    </section>
+
+
+{% endblock %}

@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ProjetRepository;
+use App\Repository\ProjectRepository;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ProjetRepository::class)
+ * @ORM\Entity(repositoryClass=ProjectRepository::class)
  */
-class Projet
+class Project
 {
     /**
      * @ORM\Id
@@ -21,7 +21,17 @@ class Projet
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private ?string $titre;
+    private ?string $Nom;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $Clé;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $Modéle;
 
     /**
      * @ORM\Column(type="date")
@@ -37,20 +47,49 @@ class Projet
      * @ORM\Column(type="string", length=255)
      */
     private ?string $Etat;
+    public function __construct()
+    {
+        $this->DateDebut = new \DateTime();
+        $this->DateFin =new \DateTime();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitre(): ?string
+    public function getNom(): ?string
     {
-        return $this->titre;
+        return $this->Nom;
     }
 
-    public function setTitre(string $titre): self
+    public function setNom(string $nom): self
     {
-        $this->titre = $titre;
+        $this->Nom = $Nom;
+
+        return $this;
+    }
+
+    public function getClé(): ?string
+    {
+        return $this->Clé;
+    }
+
+    public function setCl(string $Clé): self
+    {
+        $this->Clé = $Clé;
+
+        return $this;
+    }
+
+    public function getModéle(): ?string
+    {
+        return $this->Modéle;
+    }
+
+    public function setModéle(string $Modéle): self
+    {
+        $this->Modéle = $Modéle;
 
         return $this;
     }
