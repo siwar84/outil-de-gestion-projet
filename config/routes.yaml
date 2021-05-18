@@ -1,1 +1,5 @@
-
+# config/routes.yaml
+hello:
+  path:     /Security
+  controller: App\Controller\SecurityController::index
+  methods: GET

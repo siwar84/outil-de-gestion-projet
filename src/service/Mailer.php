@@ -7,16 +7,21 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
 
 
+
 class Mailer{
- /**
+    /**
      * @var MailerInterface
      */
-    private $mailer;
+    private   $mailer;
 
     public function __construct(MailerInterface $mailer)
     {
          $this->mailer = $mailer;
     }
+
+    /**
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     */
     public function sendEmail($email, $token)
     {
         $email = (new TemplatedEmail())
